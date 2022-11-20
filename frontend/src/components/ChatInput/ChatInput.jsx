@@ -1,15 +1,22 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import "./ChatInput.scss";
 
 const ChatInput = (props) => {
+  const [message, setMessage] = useState("");
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    props.send(message);
+    setMessage("");
+  };
   return (
     <div>
-      <div className="ChatInput">
+      <form className="ChatInput" onSubmit={handleSubmit}>
         <input
-          onKeyDown={props.send}
+          value={message}
+          onChange={(event) => setMessage(event.target.value)}
           placeholder="type a message... Hit Enter to send"
         ></input>
-      </div>
+      </form>
     </div>
   );
 };

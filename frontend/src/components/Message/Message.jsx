@@ -1,13 +1,13 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Message.scss";
 
 const Message = (props) => {
-  const [message, setMessage] = useState("");
+  // const [message, setMessage] = useState("");
 
-  useEffect(() => {
-    setMessage(JSON.parse(props.message));
-  }, []);
+  // useEffect(() => {
+  //   setMessage(JSON.parse(props.message));
+  // }, []);
 
-  return <div className="Message">{message.body}</div>;
+  return <div className="Message">{props.message.body}</div>;
 };
 export default Message;

@@ -1,8 +1,8 @@
-import React, { Component, useEffect } from "react";
+import React, { useEffect } from "react";
 import "./ChatHistory.scss";
 import Message from "../Message/Message";
 
-const ChatHistory = (props) => {
+function ChatHistory(props) {
   useEffect(() => {
     console.log(props.ChatHistory);
   });
@@ -11,11 +11,11 @@ const ChatHistory = (props) => {
       <h2>Chat History</h2>
       <div>
         {props.ChatHistory.map((msg) => (
-          <Message key={msg.timeStamp} message={msg.data} />
+          <Message key={msg.timeStamp} message={msg} />
         ))}
       </div>
     </div>
   );
-};
+}
 
 export default ChatHistory;

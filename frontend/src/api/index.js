@@ -3,11 +3,12 @@ let connect = (cb) => {
   console.log("conecting");
 
   socket.onopen = () => {
-    console.log("successgully connected");
+    console.log("successfully connected");
   };
 
   socket.onmessage = (msg) => {
     console.log("message from websocket", msg);
+    cb(msg);
   };
 
   socket.onclose = (event) => {

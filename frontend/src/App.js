@@ -6,18 +6,26 @@ import "./App.css";
 import { connect, sendMsg } from "./api";
 
 const App = () => {
-  const [ChatHistory, SetChatHistory] = useState([]);
+  // const sampleMsg = [
+  //   { timestamp: "1Nov", data: { body: "msg1" } },
+  //   { timestamp: "2Nov", data: { body: "msg5" } },
+  // ];
+  const [chatHistory, setChatHistory] = useState([]);
   useEffect(() => {
-    connect((msg) => {
+    connect((msgObj) => {
+      const msg = JSON.parse(msgObj.data);
       console.log("New Message");
-      SetChatHistory((OldHistory) => [...OldHistory, msg]);
+      setChatHistory((oldHistory) => [...oldHistory, msg]);
     });
   }, []);
+  const send = (message) => {
+    sendMsg(message);
+  };
   return (
     <div className="App">
       <Header />
-      <ChatHistory ChatHistory={ChatHistory} />
-      {/* <ChatInput send={send} /> */}
+      <ChatHistory ChatHistory={chatHistory} />
+      <ChatInput send={send} />
     </div>
   );
 };
