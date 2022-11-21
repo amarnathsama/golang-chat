@@ -9,7 +9,7 @@ import (
 )
 
 type Client struct {
-	ID   string
+	// ID   string
 	Conn *websocket.Conn
 	Pool *Pool
 	mu   sync.Mutex
@@ -18,6 +18,7 @@ type Client struct {
 type Message struct {
 	Type int    `json:"type"`
 	Body string `json:"body"`
+	// PoolID string `json:"poolID"`
 }
 
 func (c *Client) Read() {

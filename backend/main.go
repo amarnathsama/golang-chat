@@ -26,7 +26,7 @@ func setupRoutes() {
 	go pool.Start()
 
 	http.HandleFunc("/ws", func(w http.ResponseWriter, r *http.Request) {
-		serveWS(pool, w, r)
+		serveWS(pool, w, r) 
 	})
 }
 

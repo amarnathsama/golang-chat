@@ -1,0 +1,23 @@
+{
+  "name": "golang-chat-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently --kill-others \"cd backend && go run main.go\" \"cd frontend && npm start\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amarnathsama/golang-chat.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amarnathsama/golang-chat/issues"
+  },
+  "homepage": "https://github.com/amarnathsama/golang-chat#readme",
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
