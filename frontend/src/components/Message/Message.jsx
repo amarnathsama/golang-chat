@@ -4,9 +4,9 @@ import "./Message.scss";
 const Message = (props) => {
   // const [message, setMessage] = useState("");
 
-  // useEffect(() => {
-  //   setMessage(JSON.parse(props.message));
-  // }, []);
+  useEffect(() => {
+    console.log(JSON.parse(props.message));
+  }, []);
 
   return <div className="Message">{props.message.body}</div>;
 };

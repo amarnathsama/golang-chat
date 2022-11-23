@@ -3,7 +3,7 @@ package websocket
 import "fmt"
 
 type Pool struct {
-	// ID         string
+	ID         string
 	Register   chan *Client
 	Unregister chan *Client
 	Clients    map[*Client]bool
@@ -12,6 +12,7 @@ type Pool struct {
 
 func NewPool() *Pool {
 	return &Pool{
+		ID:         "1",
 		Register:   make(chan *Client),
 		Unregister: make(chan *Client),
 		Clients:    make(map[*Client]bool),

@@ -19,13 +19,14 @@ const App = () => {
     });
   }, []);
   const send = (message) => {
-    sendMsg(message);
+    const messageObj = { message, chanelID: 1 };
+    sendMsg(messageObj);
   };
   return (
     <div className="App">
       <Header />
-      <ChatHistory ChatHistory={chatHistory} />
-      <ChatInput send={send} />
+      {/* <ChatHistory ChatHistory={chatHistory} />
+      <ChatInput send={send} /> */}
     </div>
   );
 };
