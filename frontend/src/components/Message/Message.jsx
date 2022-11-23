@@ -5,7 +5,7 @@ const Message = (props) => {
   // const [message, setMessage] = useState("");
 
   useEffect(() => {
-    console.log(JSON.parse(props.message));
+    console.log(props.message);
   }, []);
 
   return <div className="Message">{props.message.body}</div>;
