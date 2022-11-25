@@ -4,12 +4,9 @@ import ChatHistory from "./components/ChatHistory/ChatHistory";
 import ChatInput from "./components/ChatInput/ChatInput";
 import "./App.css";
 import { connect, sendMsg } from "./api";
+import Channels from "./components/Channels";
 
 const App = () => {
-  // const sampleMsg = [
-  //   { timestamp: "1Nov", data: { body: "msg1" } },
-  //   { timestamp: "2Nov", data: { body: "msg5" } },
-  // ];
   const [chatHistory, setChatHistory] = useState([]);
   useEffect(() => {
     connect((msgObj) => {
@@ -24,8 +21,7 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      <ChatHistory ChatHistory={chatHistory} />
-      <ChatInput send={send} />
+      <Channels ChatHistory={chatHistory} send={send} />
     </div>
   );
 };
